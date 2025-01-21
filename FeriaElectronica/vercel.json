@@ -1,16 +1,12 @@
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
+  "version": 2,
   "builds": [
     {
-      "src": "angular.json",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "www"
+        "distDir": "www",
+        "buildCommand": "npm run vercel-build"
       }
     }
   ],
@@ -19,7 +15,5 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ],
-  "installCommand": "npm install",
-  "buildCommand": "npx ng build"
+  ]
 }
