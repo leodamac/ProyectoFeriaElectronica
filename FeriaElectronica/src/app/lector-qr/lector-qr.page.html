@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>lectorQR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">lectorQR</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <input #fileinput type="file" accept="image/*;capture=camera" hidden (change)="handleFile($event)" />
+  <canvas #canvas></canvas>
+  <ion-button expand="full" (click)="captureImage()">
+    <ion-icon slot="start" name="camera"></ion-icon>
+    Capture Image
+  </ion-button>
+  <ion-button expand="full" (click)="startScan()">
+    <ion-icon slot="start" name="qr-scanner"></ion-icon>
+    Start scan
+  </ion-button>
+  <ion-button expand="full" (click)="reset()" color="warning" *ngIf="scanResult">
+    <ion-icon slot="start" name="refresh"></ion-icon>
+    Reset
+  </ion-button>
+  <video #video [hidden]="!scanActive" width="100%"></video>
+  <canvas #canvas hidden></canvas>
+  
+  <div *ngIf="scanResult">
+    <h2>Scan Result:</h2>
+    <p>{{ scanResult }}</p>
+  </div>
+
+  <div *ngIf="proyecto" class="proyecto-container">
+    <h2>{{ proyecto.nombre }}</h2>
+    <div class="integrantes-container">
+      <div *ngFor="let integrante of proyecto.integrantes" class="integrante">
+        <h3 class="integrante-nombre">{{ integrante.nombre }}</h3>
+        <img [src]="integrante.foto" alt="{{ integrante.nombre }}" class="id-photo">
+      </div>
+    </div>
+    <h3>Imagen del Proyecto</h3>
+    <img [src]="proyecto.imagenProyecto" alt="Imagen del Proyecto" class="project-image">
+  </div>
+
+  <div>
+    <ion-item>
+      <ion-label position="floating">Texto para el Código QR</ion-label>
+      <ion-input [(ngModel)]="userInput" placeholder="Introduce el texto"></ion-input>
+    </ion-item>
+    <ion-button expand="full" (click)="generarCodigoQR()">
+      Generar Código QR
+    </ion-button>
+    <div *ngIf="qrCodeUrl">
+      <img [src]="qrCodeUrl" alt="Código QR">
+    </div>
+  </div>
+</ion-content>

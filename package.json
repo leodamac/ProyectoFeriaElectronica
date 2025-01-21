@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@capacitor-mlkit/barcode-scanning": "^6.2.0",
+    "@capacitor/cli": "^6.2.0"
+  }
+}

@@ -1,0 +1,33 @@
+.proyecto-container {
+    text-align: center;
+  }
+  
+  .integrantes-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre los integrantes */
+  }
+  
+  .integrante {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .integrante-nombre {
+    margin-bottom: 5px;
+  }
+  
+  .id-photo {
+    width: 100px; /* Ajusta el ancho para que coincida con el tamaño de la foto de identificación */
+    height: 130px; /* Ajusta la altura para que coincida con el tamaño de la foto de identificación */
+    object-fit: cover;
+  }
+  
+  .project-image {
+    display: block;
+    margin: 20px auto;
+    width: 200px; /* Ajusta el tamaño de la imagen del proyecto */
+    height: auto;
+  }

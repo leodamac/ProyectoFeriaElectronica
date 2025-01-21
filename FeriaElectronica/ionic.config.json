@@ -1,0 +1,8 @@
+{
+  "name": "FeriaElectronica",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone",
+  "outputPath": "www"
+}
