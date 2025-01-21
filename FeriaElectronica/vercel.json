@@ -1,23 +1,9 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "www",
-        "buildCommand": "npm run build:prod"
-      }
-    }
-  ],
+  "buildCommand": "node build-script.js",
+  "outputDirectory": "www",
+  "installCommand": "npm install",
   "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    },
     {
       "src": "/(.*)",
       "dest": "/index.html"
