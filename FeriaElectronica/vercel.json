@@ -1,12 +1,11 @@
 {
-  "version": 2,
-  "buildCommand": "node build-script.js",
-  "outputDirectory": "www",
-  "installCommand": "npm install",
-  "routes": [
+  "builds": [
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "src": "angular.json",
+      "use": "@vercel/angular"
     }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }

@@ -2,14 +2,8 @@
   "name": "FeriaElectronica",
   "version": "0.0.1",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "vercel-build": "node build-script.js",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "lint": "ng lint"
-  },
+  "build": "ng build"
+},
   "private": true,
   "dependencies": {
     "@angular/animations": "^19.0.0",
