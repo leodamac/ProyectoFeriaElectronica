@@ -6,11 +6,18 @@
       "use": "@vercel/static-build",
       "config": {
         "distDir": "www",
-        "buildCommand": "npm run build -- --configuration production"
+        "buildCommand": "npm run build:prod"
       }
     }
   ],
   "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
     {
       "src": "/(.*)",
       "dest": "/index.html"
